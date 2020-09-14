@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace AlertME.App
@@ -19,9 +13,21 @@ namespace AlertME.App
         public frmReminding()
         {
             InitializeComponent();
+            Console.WriteLine();
 
         }
 
+        /// <summary>
+        /// frmReminding_Load
+        /// </summary>
+        /// 
+        ///     . Bu event Method'u form yüklendiğinde önce domainUpDown componentlerinin
+        ///         itemlerini atar.
+        ///     . Refresh() methodunu çağırır ve formu temizler.
+        ///         
+        /// 
+        /// <param name="sender"></param>
+        /// <param name="e"></param>            
         private void frmReminding_Load(object sender, EventArgs e)
         {
             
@@ -60,25 +66,16 @@ namespace AlertME.App
 
         }
 
-        private void tmr_Tick(object sender, EventArgs e)
-        {
-            var tmr = sender as Timer;
-            tmr.Enabled = false;
-            MessageBox.Show(tmr.Tag.ToString(), "Hatırlatma!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
-            alarms = new Alarms[lstAktive.Items.Count];
-            lstAktive.Items.CopyTo(alarms, 0);
-            foreach (var item in alarms)
-            {
-                if (item.tmr1.Enabled == false)
-                {
-                    lstAktive.Items.Remove(item);
-                    lstOldAlarms.Items.Add(item);
-                }
-            }
-            
-            
-        }
-
+        /// <summary>
+        /// btnCreate_Click
+        /// </summary>
+        ///     . Kur butonuna basıldığında öncelikle hatırlatma isminin girildiği
+        ///         txtAddName textBox'ını kontrol eder(isimsiz hatırlatma kurulamaz)
+        ///     . Alarm sınıfından yeni bir nesne tanımlar
+        ///     . Alarmın timer'ının Tick eventine tmr_tick methodunu atar
+        ///     . en sonr refresh() methodu çağırılır ve herşey temizlenir
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCreate_Click(object sender, EventArgs e)
         {
             erpWarning.Clear();
@@ -107,18 +104,16 @@ namespace AlertME.App
            
         }
 
-
-
-        private void RefreshAll()
-        {
-            txtAddName.Clear();
-            txtMesssage.Clear();
-            dtpDate.Value = DateTime.Now;
-            dudHours.SelectedIndex = 0;
-            dudMunites.SelectedIndex = 0;
-            txtAddName.Focus();
-        }
-
+        /// <summary>
+        /// btnDisable_Click
+        /// </summary>
+        ///     . eğer lstActive listBox'ında bir item seçiliyse
+        ///         o alarmı kaldırır lstPassive atar ve timer'ını durdurur
+        ///     . bir alarmı pasif yapmak için yazılmıştır.
+        ///        
+        ///     
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDisable_Click(object sender, EventArgs e)
         {
             if (lstAktive.SelectedItem != null)
@@ -128,10 +123,15 @@ namespace AlertME.App
                 lstPassive.Items.Add(alarm);
                 alarm.tmr1.Stop();
             }
-            
-            
         }
 
+        /// <summary>
+        /// btnEnable_Click
+        /// </summary>
+        ///     . lstPassive listBox'ındaki seçili alarmı kaldırıp lstActive geri atar
+        ///     . pasif olan bir alarm'ı tekrar aktifleştirmek için kullanıldı.
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEnable_Click(object sender, EventArgs e)
         {
             if (lstPassive.SelectedItem != null)
@@ -145,6 +145,14 @@ namespace AlertME.App
             
         }
 
+        /// <summary>
+        /// btnRemove_Click
+        /// </summary>
+        ///     . Herhangi bir listBox'taki seçili elemanı liteden kaldırıp 
+        ///         timer'ını dispose eder.
+        ///     . herhangi bir alarmı kaldırmak için kullanıldı
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRemove_Click(object sender, EventArgs e)
         {
             if (lstAktive.SelectedItem != null)
@@ -167,24 +175,107 @@ namespace AlertME.App
             }
         }
 
+        /// <summary>
+        /// lstAktive_Click
+        /// </summary>
+        ///     . lstActive listBox'ına tıklandığında 
+        ///         diğer listBox'larda seçili bir itemin kalmaması için kullanıldı
+        ///     
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lstAktive_Click(object sender, EventArgs e)
         {
             lstPassive.SelectedIndex = -1;
             lstOldAlarms.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// lstPassive_Click
+        /// </summary>
+        ///     . lstPassive listBox'ına tıklandığında 
+        ///         diğer listBox'larda seçili bir itemin kalmaması için kullanıldı
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lstPassive_Click(object sender, EventArgs e)
         {
             lstAktive.SelectedIndex = -1;
             lstOldAlarms.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// lstOLdAlarms_Click
+        /// </summary>
+        ///     . lstOldAlarms listBox'ına tıklandığında 
+        ///         diğer listBox'larda seçili bir itemin kalmaması için kullanıldı
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lstOldAlarms_Click(object sender, EventArgs e)
         {
             lstAktive.SelectedIndex = -1;
             lstPassive.SelectedIndex = -1;
         }
 
+
+
+
+
+        /// <summary>
+        /// tmr_Tick
+        /// </summary>
+        ///     . oluşan her timer için kullandığımız event methodudur.
+        ///     . herhangi bir alarmın timer'ı tetiklendiğinde bu method çalışır ve
+        ///         timer'ın enabled özelliği false'a çekilir.
+        ///     . mesaj bastırılır.
+        ///     . daha sonra lstActive listesini tarayıp timer'ı enabled özelliği false olanları
+        ///         lstActive'den lstPassive'e taşıyoruz.
+        ///     
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tmr_Tick(object sender, EventArgs e)
+        {
+            var tmr = sender as Timer;
+            tmr.Enabled = false;
+            MessageBox.Show(tmr.Tag.ToString(), "Hatırlatma!", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+            alarms = new Alarms[lstAktive.Items.Count];
+            lstAktive.Items.CopyTo(alarms, 0);
+            foreach (var item in alarms)
+            {
+                if (item.tmr1.Enabled == false)
+                {
+                    lstAktive.Items.Remove(item);
+                    lstOldAlarms.Items.Add(item);
+                }
+            }
+            
+            
+        }
+
+
+        /// <summary>
+        /// RefreshAll
+        /// </summary>
+        ///     . Formun üzerindeki controlleri istediğim düzeyde temizler
+        private void RefreshAll()
+        {
+            txtAddName.Clear();
+            txtMesssage.Clear();
+            dtpDate.Value = DateTime.Now;
+            dudHours.SelectedIndex = 0;
+            dudMunites.SelectedIndex = 0;
+            txtAddName.Focus();
+        }
+
+
+        /// <summary>
+        /// lstAktive_MouseDoubleClick
+        /// </summary>
+        ///     . lstActive listBox'ında bir alarm'a iki kere tıklandığında 
+        ///         alarmın bilgilerini gözstermek için kullanıyoruz.
+        ///     . Burada seçili alarmın bilgileri frmDisplayAlarmProperties sınıfına gönderiliyor
+        ///     . eğer diğer formda değişiklik yapılıp veya yapılmayıp save butonuna basıldıysa
+        ///         secili alarm kaldırılıp timer'ı dispose edilip yeni hali tekrar alarm olarak ekleniyor
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lstAktive_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (lstAktive.SelectedItem != null)
@@ -206,6 +297,16 @@ namespace AlertME.App
             
         }
 
+        /// <summary>
+        /// lstOldAlarms_MouseDoubleClick
+        /// </summary>
+        ///     . lstOldAlarms listBox'ında bir alarm'a iki kere tıklandığında 
+        ///         alarmın bilgilerini gözstermek için kullanıyoruz.
+        ///     . Burada seçili alarmın bilgileri frmDisplayAlarmProperties sınıfına gönderiliyor
+        ///     . eğer diğer formda değişiklik yapılıp veya yapılmayıp save butonuna basıldıysa
+        ///         secili alarm kaldırılıp timer'ı dispose edilip yeni hali tekrar alarm olarak ekleniyor
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lstOldAlarms_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (lstOldAlarms.SelectedItem != null)
@@ -225,6 +326,17 @@ namespace AlertME.App
                 
             }
         }
+
+        /// <summary>
+        /// lstPassive_MouseDoubleClick
+        /// </summary>
+        ///     . lstPassive listBox'ında bir alarm'a iki kere tıklandığında 
+        ///         alarmın bilgilerini gözstermek için kullanıyoruz.
+        ///     . Burada seçili alarmın bilgileri frmDisplayAlarmProperties sınıfına gönderiliyor
+        ///     . eğer diğer formda değişiklik yapılıp veya yapılmayıp save butonuna basıldıysa
+        ///         secili alarm kaldırılıp timer'ı dispose edilip yeni hali tekrar alarm olarak ekleniyor
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void lstPassive_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             if (lstPassive.SelectedItem != null)
@@ -244,8 +356,16 @@ namespace AlertME.App
 
             }
         }
-
-        //// burası önemli  domainUpDownları yönetmek için genel bir kod yazdık ve bütün domainUpDownlarda kullanacağız      
+ 
+        /// <summary>
+        /// dud_Leave
+        /// </summary>
+        ///     . bu event methodunu bütün domainUpDownlar için kullanıyoruz
+        ///     . bu method domainUpDownlardan ayrıldığımızada çalışmak üzere tasarlandı
+        ///     . domainUpDownların text kutucuğuna elimizle bir sayı girdiğimizde girilen sayıyı yönetmek amaçlı yapılmıştır
+        ///     
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void dud_Leave(object sender, EventArgs e)
         {
             var dud = sender as DomainUpDown;
@@ -277,10 +397,15 @@ namespace AlertME.App
 
 
 
-        // burası menü ile arayüz arasındaki köprüyü kuruyor
+
+        /// <summary>
+        /// frmReminding_FormClosing
+        /// </summary>
+        ///     . içinde bulunduğumuz form kapanırken ana menünün açılması için kullanıyoruz
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmReminding_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
             this.Visible = false;
             frmMain.Visible = true;
         }
