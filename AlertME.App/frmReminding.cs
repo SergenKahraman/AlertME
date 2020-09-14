@@ -163,7 +163,7 @@ namespace AlertME.App
             {
                 var alarm = lstOldAlarms.SelectedItem as Alarms;
                 alarm.tmr1.Dispose();
-                lstOldAlarms.Items.Remove(alarm);
+                lstOldAlarms.Items.Remove(alarm);                
             }
         }
 
