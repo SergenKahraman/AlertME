@@ -5,13 +5,7 @@ namespace AlertME.App
 {
     public class Alarms
     {
-        public string Name;
-        public int Year, Month, Day, Hours, Munites;
-        public DateTime date;
-        public double TotalMilliSecond;
-        public string MessageInTxt;
         public Timer tmr1;
-
         public Alarms(int y, int m, int d, int h, int mu, string text, string name)
         {
             Year = y;
@@ -21,8 +15,6 @@ namespace AlertME.App
             Munites = mu;
             MessageInTxt = text;
             Name = name;
-            date = new DateTime(Year, Month, Day, Hours, Munites, 0);
-            TotalMilliSecond = (date - DateTime.Now).TotalMilliseconds;
             tmr1 = new Timer()
             {
                 Interval = Convert.ToInt32(TotalMilliSecond),
@@ -31,7 +23,32 @@ namespace AlertME.App
             };
         }
 
+        public string Name { get; set; }
+        public int Year { get; set; }
+        public int Month { get; set; }
+        public int Day { get; set; }
+        public int Hours { get; set; }
+        public int Munites { get; set; }
+
+        public DateTime date
+        {
+            get
+            {
+                return new DateTime(Year, Month, Day, Hours, Munites, 0);
+            }
+        }
+        public double TotalMilliSecond
+        {
+            get
+            {
+                return (date - DateTime.Now).TotalMilliseconds;
+            }            
+        }
+        public string MessageInTxt { get; set; }
         
+        
+
+
 
         public override string ToString()
         {
