@@ -1,28 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AlertME.App
 {
     public partial class frmMainMenu : Form
     {
-        public frmReminding frmRemindingHelper; // bu bizim arayüzümüz tek bir nesne olarak tutyoruzki sürekli yenilenip veri kaybı yaşamayalım diye
-        public bool firstClick = true; // ilk menünün açılışı ve kapanışı için kullandığımız bir bayrak
+        public frmReminding frmRemindingHelper; 
+        public bool firstClick = true; 
         public frmMainMenu()
         {
             InitializeComponent();
             
         }
 
+
+        //Methods For Events
+
+        /// <summary>
+        /// btnReminding_Click
+        /// </summary>
+        ///     . öncelikle bu butona ilk defa tıklandıysa Hatırlatma kurma arayüzünü boş yapılandırıyor
+        ///     . ardına anamenunun görünürlüğünü false çekiyor yani bu formu görünmez yapıyor
+        ///     . ana menüden hatırlatma arayüzüne bilgi akışı sağlanıyor.
+        ///     . Bu algoritmanın amacı ana menü ile hatırlatma arayüzünde veri kaybı olmadan gidip gelmek
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReminding_Click(object sender, EventArgs e)
         {
-            // menü ile hatırlatma arayüzü arasındaki köprüyü kuruyor ve böylece verileri program ayaktayken korumuş oluyoruz
+            
             if (firstClick)
             {
                 frmRemindingHelper = new frmReminding();

@@ -4,18 +4,18 @@ using System.Windows.Forms;
 
 namespace AlertME.App
 {
-    public partial class frmReminding : Form
+    public partial class frmReminding : Form //alarm kurulduğu ve yönetildiği arayüz
     {
-        public string MessageTxt;
         public Alarms[] alarms;
-        public frmMainMenu frmMain = new frmMainMenu();
+        public frmMainMenu frmMain = new frmMainMenu(); //ana menüden bilgi akışı sağlıyor
 
         public frmReminding()
         {
             InitializeComponent();
-            Console.WriteLine();
-
         }
+
+
+        //Methods For Events
 
         /// <summary>
         /// frmReminding_Load
@@ -215,10 +215,6 @@ namespace AlertME.App
             lstPassive.SelectedIndex = -1;
         }
 
-
-
-
-
         /// <summary>
         /// tmr_Tick
         /// </summary>
@@ -249,22 +245,6 @@ namespace AlertME.App
             
             
         }
-
-
-        /// <summary>
-        /// RefreshAll
-        /// </summary>
-        ///     . Formun üzerindeki controlleri istediğim düzeyde temizler
-        private void RefreshAll()
-        {
-            txtAddName.Clear();
-            txtMesssage.Clear();
-            dtpDate.Value = DateTime.Now;
-            dudHours.SelectedIndex = 0;
-            dudMunites.SelectedIndex = 0;
-            txtAddName.Focus();
-        }
-
 
         /// <summary>
         /// lstAktive_MouseDoubleClick
@@ -393,11 +373,6 @@ namespace AlertME.App
             }
         }
 
-
-
-
-
-
         /// <summary>
         /// frmReminding_FormClosing
         /// </summary>
@@ -409,5 +384,33 @@ namespace AlertME.App
             this.Visible = false;
             frmMain.Visible = true;
         }
+
+        
+
+
+
+        // Methods For Other Purposes
+
+        /// <summary>
+        /// RefreshAll
+        /// </summary>
+        ///     . Formun üzerindeki controlleri istediğim düzeyde temizler
+        private void RefreshAll()
+        {
+            txtAddName.Clear();
+            txtMesssage.Clear();
+            dtpDate.Value = DateTime.Now;
+            dudHours.SelectedIndex = 0;
+            dudMunites.SelectedIndex = 0;
+            txtAddName.Focus();
+        }
+
+
+
+
+
+
+
+
     }
 }

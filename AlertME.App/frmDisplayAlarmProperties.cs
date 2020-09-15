@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AlertME.App
 {
-    public partial class frmDisplayAlarmProperties : Form
+    public partial class frmDisplayAlarmProperties : Form   //Alarmların bilgilerinin gösterildiği ve değiştirildiği arayüz
     {
         public Alarms alarm1;
         public bool flagOfSaveButtonClicked = false;
@@ -19,6 +12,18 @@ namespace AlertME.App
             InitializeComponent();
         }
 
+
+
+        //Methods For Events
+
+        /// <summary>
+        /// frmDisplayAlarmProperties_Load
+        /// </summary>
+        ///     . Bu form yüklendiğinde domainUpDown'ların İtem'leri atanır.
+        ///     . frmReminding formundan aldığımız alarm bilgisini alarm1 field'ında tutar ve
+        ///         bunu ekrandaki uygun componentlere yazar
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmDisplayAlarmProperties_Load(object sender, EventArgs e)
         {
             for (int i = 23; i > -1; i--)
@@ -56,6 +61,13 @@ namespace AlertME.App
             dudMunitesChange.SelectedItem = dudMunitesChange.Items[count2 - alarm1.Munites];
         }
 
+        /// <summary>
+        /// btnSave_Click
+        /// </summary>
+        ///     . Kaydet butonuna basıldığında değişiklikleri kaydetmek amacıyla yeni bir alarm oluşturulur
+        ///     . ve form kapatılır.
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -73,6 +85,14 @@ namespace AlertME.App
             this.Close();
         }
 
+        /// <summary>
+        /// dudMunitesChange_Leave
+        /// </summary>
+        ///     . frmRiminding formunda kullandığımız leave eventine ait dudLeave fonksiyonunu çalıştıran ve
+        ///         gene leave eventi sırasında tetiklenen bir method
+        ///     . domainUpDownların içeriğini kontrol etmek için kullanıyoruz.
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dudMunitesChange_Leave(object sender, EventArgs e)
         {
             var frmRmd = new frmReminding();
