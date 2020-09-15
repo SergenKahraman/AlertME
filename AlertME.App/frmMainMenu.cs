@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace AlertME.App
@@ -42,6 +43,46 @@ namespace AlertME.App
                 frmRemindingHelper.ShowDialog();
             }
 
+        }
+
+        private void btnReminding_MouseEnter(object sender, EventArgs e)
+        {
+            pnlButtonReminding.BackColor = Color.FromArgb(245, 248, 177, 149);
+        }
+
+        private void btnReminding_MouseLeave(object sender, EventArgs e)
+        {
+            pnlButtonReminding.BackColor = Color.FromArgb(0,0,0);
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            panel3.BackColor = Color.FromArgb(245 ,255, 94, 63);
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            panel3.BackColor = Color.FromArgb(0,0,0);
+        }
+
+        private void button3_MouseEnter(object sender, EventArgs e)
+        {
+            panel2.BackColor = Color.FromArgb(245, 201, 70, 61);
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            panel2.BackColor = Color.FromArgb(0,0,0);
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            panel4.BackColor = Color.FromArgb(245, 150, 46, 64);
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            panel4.BackColor = Color.FromArgb(0, 0, 0);
         }
     }
 }
