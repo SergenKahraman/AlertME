@@ -99,7 +99,17 @@ namespace AlertME.App
             frmRmd.dud_Leave(sender, e);
         }
 
-
-        
+        /// <summary>
+        /// EnterOrClickADomainUpDown_forThisForm
+        /// </summary>
+        ///     . kullanıcı domainUpDownlara tıkladığında veya tab ile üstlerine geldiğinde
+        ///         var olan textin seçili olmasını sağlar.
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void EnterOrClickADomainUpDown_forThisForm(object sender, EventArgs e)
+        {
+            var frmRmd = new frmReminding();
+            frmRmd.EnterOrCLickADomainUpDown(sender, e);
+        }
     }
 }

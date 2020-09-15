@@ -112,6 +112,8 @@
             this.dudHours.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.dudHours.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             this.dudHours.Wrap = true;
+            this.dudHours.Click += new System.EventHandler(this.EnterOrCLickADomainUpDown);
+            this.dudHours.Enter += new System.EventHandler(this.EnterOrCLickADomainUpDown);
             this.dudHours.Leave += new System.EventHandler(this.dud_Leave);
             // 
             // dudMunites
@@ -123,6 +125,8 @@
             this.dudMunites.TabIndex = 4;
             this.dudMunites.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.dudMunites.Wrap = true;
+            this.dudMunites.Click += new System.EventHandler(this.EnterOrCLickADomainUpDown);
+            this.dudMunites.Enter += new System.EventHandler(this.EnterOrCLickADomainUpDown);
             this.dudMunites.Leave += new System.EventHandler(this.dud_Leave);
             // 
             // groupBox2

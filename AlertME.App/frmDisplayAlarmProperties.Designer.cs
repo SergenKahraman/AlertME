@@ -114,6 +114,8 @@
             this.dudHoursChange.TabIndex = 3;
             this.dudHoursChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.dudHoursChange.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.dudHoursChange.Click += new System.EventHandler(this.EnterOrClickADomainUpDown_forThisForm);
+            this.dudHoursChange.Enter += new System.EventHandler(this.EnterOrClickADomainUpDown_forThisForm);
             this.dudHoursChange.Leave += new System.EventHandler(this.dudMunitesChange_Leave);
             // 
             // dudMunitesChange
@@ -124,6 +126,8 @@
             this.dudMunitesChange.Size = new System.Drawing.Size(57, 33);
             this.dudMunitesChange.TabIndex = 4;
             this.dudMunitesChange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dudMunitesChange.Click += new System.EventHandler(this.EnterOrClickADomainUpDown_forThisForm);
+            this.dudMunitesChange.Enter += new System.EventHandler(this.EnterOrClickADomainUpDown_forThisForm);
             this.dudMunitesChange.Leave += new System.EventHandler(this.dudMunitesChange_Leave);
             // 
             // btnSave

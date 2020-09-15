@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Linq;
 using System.Windows.Forms;
 
 namespace AlertME.App
@@ -385,7 +385,20 @@ namespace AlertME.App
             frmMain.Visible = true;
         }
 
-        
+        /// <summary>
+        /// EnterOrCLickADomainUpDown
+        /// </summary>
+        ///     . Bu method bütün domainUpDownlarda kullanılmak amaçlı oluşturulumuştur
+        ///     . kullanıcı domainUpDownlara tıkladığında veya tab ile üstlerine geldiğinde
+        ///         var olan textin seçili olmasını sağlar.
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void EnterOrCLickADomainUpDown(object sender, EventArgs e)
+        {
+            var domainUpDown = sender as DomainUpDown;
+            domainUpDown.Select(0, domainUpDown.Text.Length);
+        }
+       
 
 
 
@@ -404,13 +417,6 @@ namespace AlertME.App
             dudMunites.SelectedIndex = 0;
             txtAddName.Focus();
         }
-
-
-
-
-
-
-
 
     }
 }
