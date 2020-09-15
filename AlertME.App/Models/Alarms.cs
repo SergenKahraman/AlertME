@@ -4,9 +4,9 @@ using System.Windows.Forms;
 namespace AlertME.App
 {
     public class Alarms
-    { // denemeler
-        public Timer tmr1;
-        public Alarms(int y, int m, int d, int h, int mu, string text, string name)
+    {
+        public Timer tmr1; //TODO: burayı propertye çevirmelisin
+        public Alarms(int y, int m, int d, int h, int mu, string text, string name) //Constructor
         {
             Year = y;
             Month = m;
