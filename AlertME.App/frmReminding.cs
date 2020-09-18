@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 
 namespace AlertME.App
-{// deneme 123
+{// deneme 123 hadi busefer oldu
     public partial class frmReminding : Form //alarm kurulduğu ve yönetildiği arayüz
     {
         public Alarms[] alarms;
