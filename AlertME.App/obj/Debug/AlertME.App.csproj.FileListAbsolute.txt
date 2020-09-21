@@ -1,0 +1,22 @@
+C:\Users\SERGEN\source\repos\AlertME\AlertME.App\bin\Debug\AlertME.App.exe.config
+C:\Users\SERGEN\source\repos\AlertME\AlertME.App\bin\Debug\AlertME.App.exe
+C:\Users\SERGEN\source\repos\AlertME\AlertME.App\bin\Debug\AlertME.App.pdb
+C:\Users\SERGEN\source\repos\AlertME\AlertME.App\obj\Debug\AlertME.App.csprojAssemblyReference.cache
+C:\Users\SERGEN\source\repos\AlertME\AlertME.App\obj\Debug\AlertME.App.frmMainMenu.resources
+C:\Users\SERGEN\source\repos\AlertME\AlertME.App\obj\Debug\AlertME.App.Properties.Resources.resources
+C:\Users\SERGEN\source\repos\AlertME\AlertME.App\obj\Debug\AlertME.App.csproj.GenerateResource.cache
+C:\Users\SERGEN\source\repos\AlertME\AlertME.App\obj\Debug\AlertME.App.csproj.CoreCompileInputs.cache
+C:\Users\SERGEN\source\repos\AlertME\AlertME.App\obj\Debug\AlertME.App.exe
+C:\Users\SERGEN\source\repos\AlertME\AlertME.App\obj\Debug\AlertME.App.pdb
+C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\bin\Debug\AlertME.App.exe.config
+C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\bin\Debug\AlertME.App.exe
+C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\bin\Debug\AlertME.App.pdb
+C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\obj\Debug\AlertME.App.csprojAssemblyReference.cache
+C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\obj\Debug\AlertME.App.frmMainMenu.resources
+C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\obj\Debug\AlertME.App.Properties.Resources.resources
+C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\obj\Debug\AlertME.App.csproj.GenerateResource.cache
+C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\obj\Debug\AlertME.App.csproj.CoreCompileInputs.cache
+C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\obj\Debug\AlertME.App.exe
+C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\obj\Debug\AlertME.App.pdb
+C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\obj\Debug\AlertME.App.frmReminding.resources
+C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\obj\Debug\AlertME.App.frmDisplayAlarmProperties.resources

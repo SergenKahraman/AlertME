@@ -27,7 +27,8 @@ namespace AlertME.App
         ///         
         /// 
         /// <param name="sender"></param>
-        /// <param name="e"></param>            
+        /// <param name="e"></param>  
+        
         private void frmReminding_Load(object sender, EventArgs e)
         {
             
@@ -399,7 +400,7 @@ namespace AlertME.App
             domainUpDown.Select(0, domainUpDown.Text.Length);
         }
        
-
+        
 
 
         // Methods For Other Purposes
