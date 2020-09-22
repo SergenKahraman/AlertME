@@ -7,7 +7,7 @@ namespace AlertME.App
     public partial class frmReminding : Form //alarm kurulduğu ve yönetildiği arayüz
     {
         public Alarms[] alarms;
-        public frmMainMenu frmMain = new frmMainMenu(); //ana menüden bilgi akışı sağlıyor
+        public frmMainMenu frmMain; //ana menüden bilgi akışı sağlıyor
 
         public frmReminding()
         {

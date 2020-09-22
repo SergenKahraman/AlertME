@@ -28,20 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
             this.label1 = new System.Windows.Forms.Label();
             this.pnlButtonReminding = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.btnReminding = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.ctxForNotifyIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ctxButtonOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctxButtonClose = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlButtonReminding.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.ctxForNotifyIcon.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -63,75 +69,12 @@
             this.pnlButtonReminding.Size = new System.Drawing.Size(632, 341);
             this.pnlButtonReminding.TabIndex = 2;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Location = new System.Drawing.Point(632, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(632, 341);
-            this.panel2.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Location = new System.Drawing.Point(0, 341);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(632, 341);
-            this.panel3.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Location = new System.Drawing.Point(632, 341);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(632, 341);
-            this.panel4.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(94)))), ((int)(((byte)(63)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(504, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 128);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
-            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(46)))), ((int)(((byte)(64)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 128);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
-            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(70)))), ((int)(((byte)(61)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(0, 213);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 128);
-            this.button3.TabIndex = 1;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
-            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
-            // 
             // btnReminding
             // 
             this.btnReminding.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(177)))), ((int)(((byte)(149)))));
             this.btnReminding.BackgroundImage = global::AlertME.App.Properties.Resources.reminder__3_;
             this.btnReminding.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReminding.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnReminding.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReminding.ImageIndex = 0;
             this.btnReminding.Location = new System.Drawing.Point(504, 213);
@@ -142,6 +85,106 @@
             this.btnReminding.Click += new System.EventHandler(this.btnReminding_Click);
             this.btnReminding.MouseEnter += new System.EventHandler(this.btnReminding_MouseEnter);
             this.btnReminding.MouseLeave += new System.EventHandler(this.btnReminding_MouseLeave);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Location = new System.Drawing.Point(632, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(632, 341);
+            this.panel2.TabIndex = 2;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(70)))), ((int)(((byte)(61)))));
+            this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Location = new System.Drawing.Point(0, 213);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(128, 128);
+            this.button3.TabIndex = 1;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
+            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Location = new System.Drawing.Point(0, 341);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(632, 341);
+            this.panel3.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(94)))), ((int)(((byte)(63)))));
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(504, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(128, 128);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.Controls.Add(this.btnExit);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.ForeColor = System.Drawing.Color.Black;
+            this.panel4.Location = new System.Drawing.Point(632, 341);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(632, 341);
+            this.panel4.TabIndex = 2;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(46)))), ((int)(((byte)(64)))));
+            this.btnExit.BackgroundImage = global::AlertME.App.Properties.Resources.exit;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExit.Location = new System.Drawing.Point(0, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(128, 128);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.MouseEnter += new System.EventHandler(this.btnExit_MouseEnter);
+            this.btnExit.MouseLeave += new System.EventHandler(this.btnExit_MouseLeave);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.ContextMenuStrip = this.ctxForNotifyIcon;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "AlertME";
+            this.notifyIcon1.Visible = true;
+            // 
+            // ctxForNotifyIcon
+            // 
+            this.ctxForNotifyIcon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ctxButtonOpen,
+            this.ctxButtonClose});
+            this.ctxForNotifyIcon.Name = "ctxForNotifyIcon";
+            this.ctxForNotifyIcon.Size = new System.Drawing.Size(105, 48);
+            // 
+            // ctxButtonOpen
+            // 
+            this.ctxButtonOpen.Name = "ctxButtonOpen";
+            this.ctxButtonOpen.Size = new System.Drawing.Size(180, 22);
+            this.ctxButtonOpen.Text = "Aç";
+            this.ctxButtonOpen.Click += new System.EventHandler(this.ctxButtonOpen_Click);
+            // 
+            // ctxButtonClose
+            // 
+            this.ctxButtonClose.Name = "ctxButtonClose";
+            this.ctxButtonClose.Size = new System.Drawing.Size(180, 22);
+            this.ctxButtonClose.Text = "Kapat";
+            this.ctxButtonClose.Click += new System.EventHandler(this.ctxButtonClose_Click);
             // 
             // frmMainMenu
             // 
@@ -161,11 +204,13 @@
             this.Name = "frmMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AlertME";
+            this.Load += new System.EventHandler(this.frmMainMenu_Load);
             this.pnlButtonReminding.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.ctxForNotifyIcon.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -180,7 +225,11 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ContextMenuStrip ctxForNotifyIcon;
+        private System.Windows.Forms.ToolStripMenuItem ctxButtonOpen;
+        private System.Windows.Forms.ToolStripMenuItem ctxButtonClose;
     }
 }
 

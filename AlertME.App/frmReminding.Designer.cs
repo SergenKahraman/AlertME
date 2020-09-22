@@ -256,6 +256,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(177)))), ((int)(((byte)(149)))));
             this.ClientSize = new System.Drawing.Size(1176, 554);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

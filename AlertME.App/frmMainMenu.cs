@@ -75,14 +75,34 @@ namespace AlertME.App
             panel2.BackColor = Color.FromArgb(0,0,0);
         }
 
-        private void button2_MouseEnter(object sender, EventArgs e)
+        private void btnExit_MouseEnter(object sender, EventArgs e)
         {
             panel4.BackColor = Color.FromArgb(245, 150, 46, 64);
         }
 
-        private void button2_MouseLeave(object sender, EventArgs e)
+        private void btnExit_MouseLeave(object sender, EventArgs e)
         {
             panel4.BackColor = Color.FromArgb(0, 0, 0);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void ctxButtonOpen_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void ctxButtonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmMainMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

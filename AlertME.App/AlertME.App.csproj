@@ -107,6 +107,7 @@
     <None Include="bin\Debug\reminder.png" />
     <None Include="bin\Debug\reminder %282%29.png" />
     <None Include="bin\Debug\reminder %283%29.png" />
+    <None Include="bin\Debug\exit.png" />
     <Content Include="notification %281%29.ico" />
     <Content Include="notification.ico" />
   </ItemGroup>
