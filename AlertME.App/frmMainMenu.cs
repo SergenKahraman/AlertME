@@ -100,9 +100,12 @@ namespace AlertME.App
             this.Close();
         }
 
-        private void frmMainMenu_Load(object sender, EventArgs e)
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
         {
-
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Show();
+            }   
         }
     }
 }

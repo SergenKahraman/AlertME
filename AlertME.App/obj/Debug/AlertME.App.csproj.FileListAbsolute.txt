@@ -20,3 +20,15 @@ C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\obj\Debug\AlertME.Ap
 C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\obj\Debug\AlertME.App.pdb
 C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\obj\Debug\AlertME.App.frmReminding.resources
 C:\Users\SERGEN\Desktop\AlertME Projesi\AlertME\AlertME.App\obj\Debug\AlertME.App.frmDisplayAlarmProperties.resources
+C:\Users\user\Source\Repos\SergenKahraman\AlertME\AlertME.App\bin\Debug\AlertME.App.exe.config
+C:\Users\user\Source\Repos\SergenKahraman\AlertME\AlertME.App\bin\Debug\AlertME.App.exe
+C:\Users\user\Source\Repos\SergenKahraman\AlertME\AlertME.App\bin\Debug\AlertME.App.pdb
+C:\Users\user\Source\Repos\SergenKahraman\AlertME\AlertME.App\obj\Debug\AlertME.App.csprojAssemblyReference.cache
+C:\Users\user\Source\Repos\SergenKahraman\AlertME\AlertME.App\obj\Debug\AlertME.App.frmDisplayAlarmProperties.resources
+C:\Users\user\Source\Repos\SergenKahraman\AlertME\AlertME.App\obj\Debug\AlertME.App.frmMainMenu.resources
+C:\Users\user\Source\Repos\SergenKahraman\AlertME\AlertME.App\obj\Debug\AlertME.App.frmReminding.resources
+C:\Users\user\Source\Repos\SergenKahraman\AlertME\AlertME.App\obj\Debug\AlertME.App.Properties.Resources.resources
+C:\Users\user\Source\Repos\SergenKahraman\AlertME\AlertME.App\obj\Debug\AlertME.App.csproj.GenerateResource.cache
+C:\Users\user\Source\Repos\SergenKahraman\AlertME\AlertME.App\obj\Debug\AlertME.App.csproj.CoreCompileInputs.cache
+C:\Users\user\Source\Repos\SergenKahraman\AlertME\AlertME.App\obj\Debug\AlertME.App.exe
+C:\Users\user\Source\Repos\SergenKahraman\AlertME\AlertME.App\obj\Debug\AlertME.App.pdb
