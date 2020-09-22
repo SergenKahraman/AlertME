@@ -56,7 +56,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(418, 311);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 21);
+            this.label1.Size = new System.Drawing.Size(254, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "written by Sergen KAHRAMAN";
             // 
@@ -163,32 +163,34 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "AlertME";
             this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
             // 
             // ctxForNotifyIcon
             // 
+            this.ctxForNotifyIcon.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ctxForNotifyIcon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctxButtonOpen,
             this.ctxButtonClose});
             this.ctxForNotifyIcon.Name = "ctxForNotifyIcon";
-            this.ctxForNotifyIcon.Size = new System.Drawing.Size(105, 48);
+            this.ctxForNotifyIcon.Size = new System.Drawing.Size(118, 52);
             // 
             // ctxButtonOpen
             // 
             this.ctxButtonOpen.Name = "ctxButtonOpen";
-            this.ctxButtonOpen.Size = new System.Drawing.Size(104, 22);
+            this.ctxButtonOpen.Size = new System.Drawing.Size(117, 24);
             this.ctxButtonOpen.Text = "Aç";
             this.ctxButtonOpen.Click += new System.EventHandler(this.ctxButtonOpen_Click);
             // 
             // ctxButtonClose
             // 
             this.ctxButtonClose.Name = "ctxButtonClose";
-            this.ctxButtonClose.Size = new System.Drawing.Size(104, 22);
+            this.ctxButtonClose.Size = new System.Drawing.Size(117, 24);
             this.ctxButtonClose.Text = "Kapat";
             this.ctxButtonClose.Click += new System.EventHandler(this.ctxButtonClose_Click);
             // 
             // frmMainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 682);
             this.Controls.Add(this.panel2);
@@ -204,7 +206,6 @@
             this.Name = "frmMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AlertME";
-            this.Load += new System.EventHandler(this.frmMainMenu_Load);
             this.pnlButtonReminding.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
