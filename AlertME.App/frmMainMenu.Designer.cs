@@ -175,14 +175,14 @@
             // ctxButtonOpen
             // 
             this.ctxButtonOpen.Name = "ctxButtonOpen";
-            this.ctxButtonOpen.Size = new System.Drawing.Size(180, 22);
+            this.ctxButtonOpen.Size = new System.Drawing.Size(104, 22);
             this.ctxButtonOpen.Text = "Aç";
             this.ctxButtonOpen.Click += new System.EventHandler(this.ctxButtonOpen_Click);
             // 
             // ctxButtonClose
             // 
             this.ctxButtonClose.Name = "ctxButtonClose";
-            this.ctxButtonClose.Size = new System.Drawing.Size(180, 22);
+            this.ctxButtonClose.Size = new System.Drawing.Size(104, 22);
             this.ctxButtonClose.Text = "Kapat";
             this.ctxButtonClose.Click += new System.EventHandler(this.ctxButtonClose_Click);
             // 
@@ -196,7 +196,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlButtonReminding);
             this.Font = new System.Drawing.Font("Segoe Print", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
